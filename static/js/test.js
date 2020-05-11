@@ -9,6 +9,8 @@ function parseUrl(Url) {
 	var access= ResUrl.split(/=|&/);
 	localStorage.setItem('access_token', access[1]);
 	localStorage.setItem('uid', access[5]);
+	selfLoad();
+	friendsLoad();
 }
 
 // helper func to create Url
@@ -75,5 +77,3 @@ function showFriends(friends) {
 	$('ul').html(page);
 }
 
-selfLoad();
-friendsLoad();
