@@ -1,6 +1,12 @@
 This a simple app to get friends from VK using VK API.
 
 How to start:
+
+1. Just go to http://46.32.68.241:5000
+
+
+If you want to customize:
+
 1. clone repo:
 ```
 git clone https://github.com/ddsvetlov/VKOauth.git
@@ -13,12 +19,18 @@ pip3 install -U pip
 pip3 install Flask
 ```
 
-3. To start app:
+3. If you want to use your own App go to /templates/test.html and change params on 22 string:
 ```
-export FLASK_APP=test.py
-flask run --port=5000
+client_id:YOUR_ID
+redirect_uri=YOUR_RED_URL
 ```
 
-4. Go to 127.0.0.1:5000
+4. To start app:
+```
+export FLASK_APP=test.py
+flask run --port=YOUR_PORT
+```
+
+5. Go to YOUR_RED_URL
 
 
