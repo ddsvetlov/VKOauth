@@ -1,8 +1,12 @@
 // redirect to VK authorize
 function authVK() {
 	// data
-	var client_id ='7462180';
-	var redirect_uri ='http://localhost:5000';
+	// test data
+	// var client_id ='7462180';
+	// var redirect_uri ='http://localhost:5000';
+	// prod data
+	var client_id ='7455731';
+	var redirect_uri ='http://46.32.68.241:5000';
 	var Url = 'https://oauth.vk.com/authorize?client_id='+client_id+'&redirect_uri='+redirect_uri+'&scope=friends&response_type=token&v=5.52';
 
 	// go to Url
