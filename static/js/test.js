@@ -1,16 +1,21 @@
-// get access_token
-function parseUrl(Url) {
+// redirect to VK authorize
+function authVK() {
+	// data
+	var client_id ='7462180';
+	var redirect_uri ='http://localhost:5000';
+	var Url = 'https://oauth.vk.com/authorize?client_id='+client_id+'&redirect_uri='+redirect_uri+'&scope=friends&response_type=token&v=5.52';
 
 	// go to Url
 	window.location = Url;
+	parseUrl();
+}
 
-	// parse Url to get access_token
+// parse url to get token and user id
+function parseUrl() {
 	var ResUrl = $(location).attr("hash");
 	var access= ResUrl.split(/=|&/);
 	localStorage.setItem('access_token', access[1]);
 	localStorage.setItem('uid', access[5]);
-	selfLoad();
-	friendsLoad();
 }
 
 // helper func to create Url
@@ -36,7 +41,6 @@ function sendReq(method, params,func) {
 function selfLoad() {
 	sendReq('users.get',{user_ids:localStorage.getItem('uid')},function(data){
 		showMe(data.response);
-		console.log(data.response);
 	});
 }
 
@@ -76,4 +80,16 @@ function showFriends(friends) {
 	}
 	$('ul').html(page);
 }
+
+// check access_token
+function getPage() {
+
+	if (localStorage.getItem('access_token')== (null || 'undefined') && localStorage.getItem('uid')== (null || 'undefined')) {
+		parseUrl();
+	}
+	selfLoad();
+	friendsLoad();	
+}
+
+
 
