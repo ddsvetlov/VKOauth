@@ -19,7 +19,7 @@ pip3 install -U pip
 pip3 install Flask
 ```
 
-3. If you want to use your own App go to /templates/test.html and change params on 22 string:
+3. If you want to use your own App go to /static/js/test.js and change params on authVK() method:
 ```
 client_id:YOUR_ID
 redirect_uri=YOUR_RED_URL
