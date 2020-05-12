@@ -8,6 +8,7 @@ li {
 a {
 	text-decoration: none;
 	display: flex;
+	width: 100vw;
 	align-items: center;
 }
 h {
@@ -20,4 +21,18 @@ img {
 	width: 50px;
 	height: 50px;
 	margin-right: 10px;
+}
+
+button {
+	width: 50vw;
+	max-width: 200px;
+	max-height: 70px;
+	height: 5vh;
+	font-size: large;
+	margin-bottom: 20px;
+}
+
+div {
+	width: 100vw;
+	font-size: large;
 }
