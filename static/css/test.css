@@ -1,3 +1,5 @@
+
+
 ul {
 	list-style: none;
 }
@@ -36,3 +38,15 @@ div {
 	width: 100vw;
 	font-size: large;
 }
+
+@media only screen and (max-device-width: 415px) {
+	button {
+		max-width: 300px;
+		font-size:x-large;
+	}
+
+	div {
+		font-size:xx-large;
+	}	
+}
+
